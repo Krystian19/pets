@@ -15,4 +15,10 @@ export class PetsService {
   findAll(): Promise<Pet[]> {
     return this.petsRepository.find();
   }
+
+  findOne(id: number): Promise<Pet | null> {
+    return this.petsRepository.findOne({
+      where: { id },
+    });
+  }
 }
